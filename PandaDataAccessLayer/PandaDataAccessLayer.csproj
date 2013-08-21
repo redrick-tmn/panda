@@ -47,20 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\ChecklistDAL.cs" />
+    <Compile Include="DAL\DAL.cs" />
+    <Compile Include="DAL\IGuidIdentifiable.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="Entities\Attrib.cs" />
-    <Compile Include="Entities\Attrib2Checklist.cs" />
+    <Compile Include="Entities\AttribValue.cs" />
     <Compile Include="Entities\AttribType.cs" />
+    <Compile Include="Entities\Checklists\Attrib2ChecklistType.cs" />
     <Compile Include="Entities\Checklists\Checklist.cs" />
-    <Compile Include="Entities\Checklists\EmployerChecklist.cs" />
+    <Compile Include="Entities\Checklists\ChecklistType.cs" />
     <Compile Include="Entities\Users\CompanyMember.cs" />
     <Compile Include="Entities\DictGroup.cs" />
     <Compile Include="Entities\DictValue.cs" />
     <Compile Include="Entities\Users\EmployerUser.cs" />
     <Compile Include="Entities\Users\PrivateEmployer.cs" />
     <Compile Include="Entities\Users\PrivateRecruiter.cs" />
+    <Compile Include="Entities\Users\PromouterUser.cs" />
     <Compile Include="Entities\Users\UserBase.cs" />
-    <Compile Include="PandaDbContext.cs" />
-    <Compile Include="PandaDebugInitializer.cs" />
+    <Compile Include="MainDbContext.cs" />
+    <Compile Include="MainInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

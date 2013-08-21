@@ -1,17 +1,14 @@
 ﻿using PandaDataAccessLayer.Entities.Checklists;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace PandaDataAccessLayer.Entities.Users
 {
-    public abstract class EmployerUser : UserBase
+    public class PromouterUser : UserBase
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string City { get; set; }
-        public string Phone { get; set; }
     }
 }
