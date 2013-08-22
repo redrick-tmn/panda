@@ -41,6 +41,10 @@ namespace PandaDataAccessLayer.DAL
             mDbContext.Set<TEntity>().Update(x => x.Id == id, updateExpression);
         }
 
+        #endregion
+
+        #region CRUD by Entity
+
         public TEntity Create<TEntity>() where TEntity : class
         {
             var set = mDbContext.Set<TEntity>();
@@ -49,13 +53,23 @@ namespace PandaDataAccessLayer.DAL
             return instance;
         }
 
-        #endregion
-
-        #region CRUD by Entity
-
-        public TEntity Get<TEntity>(Guid id) where TEntity : class, IGuidIdentifiable
+        public TEntity Create<TEntity>(TEntity entity) where TEntity : class
         {
-            return mDbContext.Set<TEntity>().Single(x => x.Id == id);
+            var set = mDbContext.Set<TEntity>();
+            set.Add(entity);
+            return entity;
+        }
+
+        public TEntity Create<TEntity>(TEntity entity, Func<TEntity, TEntity> func) where TEntity : class
+        {
+            return Create(func(entity));
+        }
+
+        public TEntity Delete<TEntity>(TEntity entity) where TEntity : class
+        {
+            var set = mDbContext.Set<TEntity>();
+            set.Remove(entity);
+            return entity;
         }
 
         #endregion

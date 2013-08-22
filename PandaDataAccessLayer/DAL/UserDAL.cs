@@ -9,12 +9,12 @@ namespace PandaDataAccessLayer.DAL
 {
     public static class UserDAL
     {
-        public static PromouterUser CreatePromouter(this DAL<MainDbContext> dal, string email)
+        public static TEntity Create<TEntity>(this DAL<MainDbContext> dal, TEntity user, SeoEntry seo)
+             where TEntity : UserBase
         {
-            var promouter = dal.Create<PromouterUser>();
-            promouter.Email = email;
-            promouter.Checklists = new List<Checklist>();
-            return promouter;
+            //user.SeoEntry = dal.Create(seo);
+            user.Checklists = new List<Checklist>();
+            return dal.Create<TEntity>(user);
         }
     }
 }

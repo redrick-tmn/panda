@@ -15,7 +15,7 @@ namespace PandaDataAccessLayer.DAL
             var checkList = dal.Create<Checklist>();
             checkList.AttrbuteValues = new List<AttribValue>(attributeValues);
             checkList.ChecklistType = dal.DbContext.ChecklistTypes.Single(x => x.Code == "Company");
-            user.Checklists.Add(checkList);
+            checkList.User = user;
             return checkList;
         }
 

@@ -34,6 +34,7 @@ namespace PandaDataAccessLayer
         public DbSet<WorkExpirience> WorkExpirience { get; set; }
         public DbSet<EntityList> EntityLists { get; set; }
 
+        public DbSet<SeoEntry> SeoEntries { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

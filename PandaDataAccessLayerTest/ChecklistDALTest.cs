@@ -18,7 +18,17 @@ namespace PandaDataAccessLayerTest
         {
             using (var dal = new DAL<MainDbContext>())
             {
-                var promouter = dal.CreatePromouter("redrick.tmn@gmail.com");
+                var promouter = dal.Create<PromouterUser>(
+                    new PromouterUser
+                    {
+                        Email = "email@domain.com"
+                    },
+                    new SeoEntry
+                    {
+                        Keyword = "email domain",
+                        Title = "Mail",
+                        Description = "Send mail to some gays =))"
+                    });
                 var checklistCount = dal.DbContext.Checklists.Count();
                 var checklist = dal.CreateChecklist(promouter, new List<AttribValue>());
                 dal.DbContext.SaveChanges();

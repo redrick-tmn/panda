@@ -19,12 +19,15 @@ namespace PandaDataAccessLayerTest
             using (var dal = new DAL<MainDbContext>())
             {
                 var userCount = dal.DbContext.PromouterUsers.Count();
-                var promouter = dal.CreatePromouter("redrick.tmn@gmail.com");
+                var promouter = dal.Create<PromouterUser>(new PromouterUser 
+                {
+                    Email = "sos1g3@gmail.com"
+                });
                 dal.DbContext.SaveChanges();
 
                 Assert.AreEqual(userCount + 1, dal.DbContext.PromouterUsers.Count());
 
-                dal.DeleteById<PromouterUser>(dal.DbContext.Entry(promouter).Entity.Id);
+                dal.Delete<PromouterUser>(dal.DbContext.Entry(promouter).Entity);
                 dal.DbContext.SaveChanges();
 
                 Assert.AreEqual(userCount, dal.DbContext.PromouterUsers.Count());

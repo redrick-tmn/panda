@@ -62,9 +62,11 @@
     <Compile Include="Entities\DictGroup.cs" />
     <Compile Include="Entities\DictValue.cs" />
     <Compile Include="Entities\EmployerUser.cs" />
+    <Compile Include="Entities\MvcAction.cs" />
     <Compile Include="Entities\PrivateEmployer.cs" />
     <Compile Include="Entities\PrivateRecruiter.cs" />
     <Compile Include="Entities\PromouterUser.cs" />
+    <Compile Include="Entities\SeoEntry.cs" />
     <Compile Include="Entities\UserBase.cs" />
     <Compile Include="Entities\WorkExpirience.cs" />
     <Compile Include="MainDbContext.cs" />
