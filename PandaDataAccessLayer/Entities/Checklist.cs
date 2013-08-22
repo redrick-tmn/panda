@@ -1,6 +1,4 @@
 ﻿using PandaDataAccessLayer.DAL;
-using PandaDataAccessLayer.Entities.Checklists;
-using PandaDataAccessLayer.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

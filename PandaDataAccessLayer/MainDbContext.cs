@@ -1,6 +1,4 @@
 ﻿using PandaDataAccessLayer.Entities;
-using PandaDataAccessLayer.Entities.Checklists;
-using PandaDataAccessLayer.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -32,6 +30,9 @@ namespace PandaDataAccessLayer
         //Dict
         public DbSet<DictGroup> DictGroups { get; set; }
         public DbSet<DictValue> DictValues { get; set; }
+
+        public DbSet<WorkExpirience> WorkExpirience { get; set; }
+        public DbSet<EntityList> EntityLists { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

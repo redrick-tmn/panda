@@ -24,6 +24,8 @@ namespace PandaDataAccessLayer.DAL
             mDbContext = new TDbContext();
         }
 
+        #region CRUD by Id
+
         public TEntity GetById<TEntity>(Guid id) where TEntity : class, IGuidIdentifiable
         {
             return mDbContext.Set<TEntity>().Single(x => x.Id == id);
@@ -47,7 +49,16 @@ namespace PandaDataAccessLayer.DAL
             return instance;
         }
 
+        #endregion
 
+        #region CRUD by Entity
+
+        public TEntity Get<TEntity>(Guid id) where TEntity : class, IGuidIdentifiable
+        {
+            return mDbContext.Set<TEntity>().Single(x => x.Id == id);
+        }
+
+        #endregion
 
         public void Dispose()
         {

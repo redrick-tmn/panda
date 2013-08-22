@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PandaDataAccessLayer.Entities.Users
+namespace PandaDataAccessLayer.Entities
 {
-    public class PrivateRecruiter : EmployerUser
+    public class PromouterUser : UserBase
     {
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PandaDataAccessLayer.Entities.Users
+namespace PandaDataAccessLayer.Entities
 {
     public class CompanyMember : EmployerUser
     {

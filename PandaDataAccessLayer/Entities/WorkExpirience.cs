@@ -8,13 +8,21 @@ using System.Threading.Tasks;
 
 namespace PandaDataAccessLayer.Entities
 {
-    public class DictGroup : IGuidIdentifiable
+    public class WorkExpirience : IGuidIdentifiable
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public string Code { get; set; }
-        public string Description { get; set; }
 
-        public virtual ICollection<DictValue> DictValues { get; set; }
+        [Required]
+        public DateTime Start { get; set; }
+        //null means in present time
+        public DateTime End { get; set; }
+        [Required]
+        public string Title { get; set; }
+        [Required]
+        public int Hours { get; set; }
+
+        public virtual EntityList EntityList { get; set; }
     }
+
 }

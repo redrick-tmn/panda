@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PandaDataAccessLayer.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace PandaDataAccessLayer.Entities
 {
-    public class DictGroup : IGuidIdentifiable
+    public abstract class UserBase : IGuidIdentifiable
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public string Code { get; set; }
-        public string Description { get; set; }
+        [Required]
+        public string Email { get; set; }
 
-        public virtual ICollection<DictValue> DictValues { get; set; }
+        public virtual ICollection<Checklist> Checklists { get; set; }
     }
 }

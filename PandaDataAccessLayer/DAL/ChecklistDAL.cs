@@ -1,6 +1,4 @@
 ﻿using PandaDataAccessLayer.Entities;
-using PandaDataAccessLayer.Entities.Checklists;
-using PandaDataAccessLayer.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -44,7 +42,7 @@ namespace PandaDataAccessLayer.DAL
         public static IEnumerable<DictValue> GetRangeByAttribTypeId(this DAL<MainDbContext> dal, Guid attribTypeId)
         {
             var dictGroup = dal.GetById<AttribType>(attribTypeId);
-            if (dictGroup.Code != "dict")
+            if (dictGroup.Type != typeof(DictValue).FullName)
             {
                 throw new Exception("Not dictionary attribute");
             }

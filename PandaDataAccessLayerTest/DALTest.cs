@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PandaDataAccessLayer.DAL;
 using PandaDataAccessLayer;
-using PandaDataAccessLayer.Entities.Users;
+using PandaDataAccessLayer.DAL;
+using PandaDataAccessLayer.Entities;
 
 namespace PandaDataAccessLayerTest
 {

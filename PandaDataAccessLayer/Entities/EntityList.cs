@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PandaDataAccessLayer.Entities.Checklists
+namespace PandaDataAccessLayer.Entities
 {
-    public class ChecklistType
+    public class EntityList : IGuidIdentifiable
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public string Code { get; set; }
+
+        public virtual ICollection<WorkExpirience> WorkExpirience { get; set; } 
     }
 }

@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace PandaDataAccessLayer.Entities
 {
-    public class Attrib
+    public class Attrib : IGuidIdentifiable
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
+        [Required]
+        public string Name { get; set; }
         public int Weight { get; set; }
         public virtual AttribType AttribType { get; set; }
     }

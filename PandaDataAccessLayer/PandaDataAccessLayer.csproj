@@ -30,6 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\packages\EntityFramework.Extended.5.0.0.73\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -43,22 +49,24 @@
   <ItemGroup>
     <Compile Include="DAL\ChecklistDAL.cs" />
     <Compile Include="DAL\DAL.cs" />
-    <Compile Include="DAL\IGuidIdentifiable.cs" />
+    <Compile Include="Entities\EntityList.cs" />
+    <Compile Include="Entities\IGuidIdentifiable.cs" />
     <Compile Include="DAL\UserDAL.cs" />
     <Compile Include="Entities\Attrib.cs" />
     <Compile Include="Entities\AttribValue.cs" />
     <Compile Include="Entities\AttribType.cs" />
-    <Compile Include="Entities\Checklists\Attrib2ChecklistType.cs" />
-    <Compile Include="Entities\Checklists\Checklist.cs" />
-    <Compile Include="Entities\Checklists\ChecklistType.cs" />
-    <Compile Include="Entities\Users\CompanyMember.cs" />
+    <Compile Include="Entities\Attrib2ChecklistType.cs" />
+    <Compile Include="Entities\Checklist.cs" />
+    <Compile Include="Entities\ChecklistType.cs" />
+    <Compile Include="Entities\CompanyMember.cs" />
     <Compile Include="Entities\DictGroup.cs" />
     <Compile Include="Entities\DictValue.cs" />
-    <Compile Include="Entities\Users\EmployerUser.cs" />
-    <Compile Include="Entities\Users\PrivateEmployer.cs" />
-    <Compile Include="Entities\Users\PrivateRecruiter.cs" />
-    <Compile Include="Entities\Users\PromouterUser.cs" />
-    <Compile Include="Entities\Users\UserBase.cs" />
+    <Compile Include="Entities\EmployerUser.cs" />
+    <Compile Include="Entities\PrivateEmployer.cs" />
+    <Compile Include="Entities\PrivateRecruiter.cs" />
+    <Compile Include="Entities\PromouterUser.cs" />
+    <Compile Include="Entities\UserBase.cs" />
+    <Compile Include="Entities\WorkExpirience.cs" />
     <Compile Include="MainDbContext.cs" />
     <Compile Include="MainInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

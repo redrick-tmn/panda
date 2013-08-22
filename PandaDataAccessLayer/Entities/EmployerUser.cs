@@ -1,11 +1,10 @@
-﻿using PandaDataAccessLayer.Entities.Checklists;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PandaDataAccessLayer.Entities.Users
+namespace PandaDataAccessLayer.Entities
 {
     public abstract class EmployerUser : UserBase
     {

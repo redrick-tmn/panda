@@ -2,7 +2,6 @@
 using PandaDataAccessLayer;
 using PandaDataAccessLayer.DAL;
 using PandaDataAccessLayer.Entities;
-using PandaDataAccessLayer.Entities.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;

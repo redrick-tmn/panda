@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PandaDataAccessLayer;
 using System.Data.Entity;
 using System.Linq;
-using PandaDataAccessLayer.Entities.Users;
 using EntityFramework.Extensions;
 using PandaDataAccessLayer.DAL;
 using PandaDataAccessLayer.Entities;

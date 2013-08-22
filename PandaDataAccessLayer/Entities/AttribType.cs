@@ -13,7 +13,7 @@ namespace PandaDataAccessLayer.Entities
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
-        public string Code { get; set; }
+        public string Type { get; set; }
 
         public DictGroup DictGroup { get; set; }
     }
