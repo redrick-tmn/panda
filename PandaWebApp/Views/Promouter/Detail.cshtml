@@ -1,0 +1,132 @@
+﻿@model PandaWebApp.ViewModels.Promouter
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<div class="base-content left">
+	<div class="user">
+		<div class="header">
+			<div class="left">
+				<span class="user-gender-icon"><img src="@Model.Icon" /></span>
+				<span class="user-name">@Model.Name</span>
+				<span class="user-number">@Model.Number</span>
+			</div>
+			<div class="right user-status">@Model.Status</div>
+							
+			<div class="clear"></div>
+		</div>
+					
+		<div class="photo left">
+			<img src="@Model.Photo" />
+			<span class="ready-to-work">ГОТОВ РАБОТАТЬ СЕЙЧАС</span>
+		</div>
+		<div class="info right">
+			<div class="col-2-1">На сайте <span class="days-on-site">#DAYS#</span></div>
+			<div class="col-2-2 days-on-site">@Model.AccountConfirmed</div>
+            <div class="clear"></div>
+			<div class="col-2-1">Дата рождения</div>
+            <div class="col-2-2">@Model.BirthDate</div>
+            <div class="clear"></div>
+			<div class="col-2-1">Количество полных лет</div>
+            <div class="col-2-2">@Model.FullYears</div>
+            <div class="clear"></div>
+			<div class="col-2-1">Мед. Книжка</div>
+            <div class="col-2-2">@Model.MedicalBook</div>
+            <div class="clear"></div>
+			<div class="col-2-1"><img src="img/car.png" />Автомобиль</div>
+            <div class="col-2-2">@Model.Car</div><div class="clear"></div>
+			<div class="col-2-1"><img src="img/phone.png" />Мобильный телефон</div>
+            <div class="col-2-2">@Model.MobilePhone</div>
+            <div class="clear"></div>
+			<div class="col-2-1">e-mail</div>
+            <div class="col-2-2"@Model.Email</div>
+            <div class="clear"></div>
+			<div class="col-2-1">Желаемая цена за час работы</div>
+            <div class="col-2-2">@Model.CostForHour</div><div class="clear"></div>
+			<div class="col-2-1">Город</div>
+            <div class="col-2-2">@Model.City</div>
+            <div class="clear"></div>
+			<div class="col-2-1">Образование</div>
+            <div class="col-2-2">@Model.Education</div>
+            <div class="clear"></div>
+		</div>
+		<div class="photo-album clear">
+			<div class="header">Фото альбом портфолио</div>
+			<div class="album">
+				<ul class="horiz">
+					@{
+                        var index = 0;
+                        foreach(var item in Model.Album)
+                        {
+                            <li class="@(index == 0 ? "first" : "")">
+                                <img src="@item" />
+                            </li>
+                            index++;
+                        }
+                    }
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div class="more"><p>Больше фотографий</p></div>
+		</div>
+						
+		<div class="full-info">
+			<div class="col-2-1 header">Внешние данные</div>
+            <div class="col-2-2 header">Параметры и размеры</div>
+            <div class="clear"></div>
+			<div class="col-2-1 simple">
+				<div class="col-2-1">Рост</div>
+                <div class="col-2-2">@Model.Height</div>
+                <div class="clear"></div>
+				<div class="col-2-1">Телосложение</div>
+                <div class="col-2-2">@Model.Build</div>
+                <div class="clear"></div>
+				<div class="col-2-1">Вес</div>
+                <div class="col-2-2">@Model.Weight</div>
+                <div class="clear"></div>
+				<div class="col-2-1">Тип кожи</div>
+                <div class="col-2-2">@Model.SkinType</div>
+                <div class="clear"></div>
+				<div class="col-2-1">Цвет глаз</div>
+                <div class="col-2-2">@Model.EyeColor</div>
+                <div class="clear"></div>
+				<div class="col-2-1">Цвет волос</div>
+                <div class="col-2-2">@Model.HairColor</div>
+                <div class="clear"></div>
+				<div class="col-2-1">Длина волос</div>
+                <div class="col-2-2">@Model.HairLength</div>
+                <div class="clear"></div>
+			</div>
+			<div class="col-2-2 simple">
+				<div class="col-2-1">Размер одежды</div>
+                <div class="col-2-2">@Model.SizeClothes</div>
+                <div class="clear"></div>
+				<div class="col-2-1">Размер обуви</div>
+                <div class="col-2-2">@Model.SizeShoes</div>
+                <div class="clear"></div>
+				<div class="col-2-1">Размер груди</div>
+                <div class="col-2-2">@Model.SizeChest</div><div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			<div class="header">Интересующая работа</div>
+			<div class="col-2-2 simple">
+				<ul class="list-style">
+                    @foreach (var item in Model.IntrestingWork1)
+                    {
+                        <li>@item</li>
+                    }
+				</ul>
+			</div>
+			<div class="col-2-2 simple">
+				<ul class="list-style">
+					@foreach (var item in Model.IntrestingWork2)
+                    {
+                        <li>@item</li>
+                    }
+				</ul>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
