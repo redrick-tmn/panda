@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace PandaDataAccessLayer.Entities
 {
-    public class MvcAction : IGuidIdentifiable
+    public class Session : IGuidIdentifiable
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
-        
-        public string Controller { get; set; }
-        public string Action { get; set; }
+        public Guid Id { get;set; }
 
-        public virtual SeoEntry SeoEntry { get; set; }
+        public DateTime LastHit { get; set; }
+
+        public virtual UserBase User { get; set; }
     }
 }
