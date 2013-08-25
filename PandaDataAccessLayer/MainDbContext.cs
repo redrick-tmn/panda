@@ -35,10 +35,17 @@ namespace PandaDataAccessLayer
         public DbSet<EntityList> EntityLists { get; set; }
 
         public DbSet<SeoEntry> SeoEntries { get; set; }
+        public DbSet<Session> Sessions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<UserBase>().ToTable("UserBase");
+            modelBuilder.Entity<EmployerUser>().ToTable("EmployerUser");
+            modelBuilder.Entity<CompanyMember>().ToTable("CompanyMember");
+            modelBuilder.Entity<PrivateEmployer>().ToTable("PrivateEmployer");
+            modelBuilder.Entity<PrivateRecruiter>().ToTable("PrivateRecruiter");
+            modelBuilder.Entity<PromouterUser>().ToTable("PromouterUser");    
+        /*
             //users mapping
             modelBuilder.Entity<CompanyMember>().Map(m =>
             {
@@ -59,7 +66,7 @@ namespace PandaDataAccessLayer
             {
                 m.MapInheritedProperties();
                 m.ToTable("PromouterUser");
-            });
+            });*/
             //checklist mapping
         }
     }

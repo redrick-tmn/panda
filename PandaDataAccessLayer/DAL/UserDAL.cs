@@ -12,7 +12,7 @@ namespace PandaDataAccessLayer.DAL
         public static TEntity Create<TEntity>(this DAL<MainDbContext> dal, TEntity user, SeoEntry seo)
              where TEntity : UserBase
         {
-            //user.SeoEntry = dal.Create(seo);
+            user.SeoEntry = dal.Create(seo);
             user.Checklists = new List<Checklist>();
             return dal.Create<TEntity>(user);
         }

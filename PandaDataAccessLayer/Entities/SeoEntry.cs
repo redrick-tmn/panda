@@ -17,6 +17,14 @@ namespace PandaDataAccessLayer.Entities
         public string Keyword { get; set; }
 
         public virtual ICollection<MvcAction> MvcActions { get; set; }
+        public virtual ICollection<UserBase> Users { get; set; }
 
+        public SeoEntry() 
+        {
+            if (MvcActions == null)
+                MvcActions = new List<MvcAction>();
+            if (Users == null)
+                Users = new List<UserBase>();
+        }
     }
 }
