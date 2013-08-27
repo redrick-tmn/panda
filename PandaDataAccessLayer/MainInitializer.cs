@@ -219,6 +219,11 @@ namespace PandaDataAccessLayer
                 },
                 new Attrib
                 {
+                    AttribType = dal.GetAttribType(typeof(EntityList)),
+                    Name = "Опыт работы",
+                },
+                new Attrib
+                {
                     AttribType = dal.GetAttribType(typeof(int)),
                     Name = "Рост"
                 },
@@ -271,6 +276,16 @@ namespace PandaDataAccessLayer
                 {
                     AttribType = dal.GetAttribType(typeof(int)),
                     Name = "Размер обуви"
+                },
+                new Attrib
+                {
+                    AttribType = dal.GetAttribType(typeof(bool)),
+                    Name = "Роликовые коньки"
+                },
+                new Attrib
+                {
+                    AttribType = dal.GetAttribType(typeof(bool)),
+                    Name = "Зимние коньки"
                 },
             };
             foreach (var attrib in attribs)

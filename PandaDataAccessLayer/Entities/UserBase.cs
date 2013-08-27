@@ -19,6 +19,7 @@ namespace PandaDataAccessLayer.Entities
 
         public virtual SeoEntry SeoEntry { get; set; }
         public virtual Photo Avatar { get; set; }
+        public virtual Album MainAlbum { get; set; }
 
         public virtual ICollection<Checklist> Checklists { get; set; }
         public virtual ICollection<Session> Sessions { get; set; }
