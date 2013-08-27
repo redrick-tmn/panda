@@ -20,6 +20,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -116,15 +118,45 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Engine\Extensions.cs" />
+    <Compile Include="Engine\Helper.cs" />
+    <Compile Include="FormModels\Register.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Blog.cs" />
+    <Compile Include="ViewModels\Feedback.cs" />
+    <Compile Include="ViewModels\PandaPulse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ProjectParticipants.cs" />
+    <Compile Include="ViewModels\Promouter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\animated-overlay.gif" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-bg_highlight-hard_15_459e00_1x100.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-bg_highlight-soft_25_67b021_1x100.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-bg_inset-soft_15_2b2922_1x100.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-icons_808080_256x240.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-icons_847e71_256x240.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-icons_8DC262_256x240.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\css\frameworks\jquery\south-street\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Content\css\frameworks\jquery\south-street\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\js\frameworks\jquery\jquery-1.9.1.js" />
+    <Content Include="Content\js\frameworks\jquery\jquery-ui-1.10.3.custom.js" />
+    <Content Include="Content\js\frameworks\jquery\jquery-ui-1.10.3.custom.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -137,7 +169,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\css\pages\" />
+    <Folder Include="Content\img\" />
+    <Folder Include="Content\js\pages\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Engine\Logic\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +184,15 @@
       <Project>{7940d2c5-4e88-4eb3-abab-fcb008e19bd9}</Project>
       <Name>PandaDataAccessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Promouter\Detail.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -177,6 +222,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
