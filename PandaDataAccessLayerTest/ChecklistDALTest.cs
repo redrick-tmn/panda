@@ -4,6 +4,7 @@ using PandaDataAccessLayer.DAL;
 using PandaDataAccessLayer.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,12 @@ namespace PandaDataAccessLayerTest
     [TestClass]
     public class ChecklistDALTest
     {
+        [TestInitialize]
+        public void InitTests()
+        {
+            Database.SetInitializer<MainDbContext>(new MainInitializer());
+        }
+
         [TestMethod]
         public void CreateAndDeleteChecklistTest() 
         {

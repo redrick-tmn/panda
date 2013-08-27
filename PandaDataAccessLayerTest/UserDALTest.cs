@@ -6,12 +6,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PandaDataAccessLayer.DAL;
 using PandaDataAccessLayer;
 using PandaDataAccessLayer.Entities;
+using System.Data.Entity;
 
 namespace PandaDataAccessLayerTest
 {
     [TestClass]
     public class UserDALTest
     {
+        [TestInitialize]
+        public void InitTests()
+        {
+            Database.SetInitializer<MainDbContext>(new MainInitializer());
+        }
+
         [TestMethod]
         public void CreateUserWithSeo()
         {

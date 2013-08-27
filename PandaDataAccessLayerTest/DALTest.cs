@@ -7,12 +7,20 @@ using System.Threading.Tasks;
 using PandaDataAccessLayer;
 using PandaDataAccessLayer.DAL;
 using PandaDataAccessLayer.Entities;
+using System.Data.Entity;
 
 namespace PandaDataAccessLayerTest
 {
+
     [TestClass]
     public class DALTest
     {
+        [TestInitialize]
+        public void InitTests()
+        {
+            Database.SetInitializer<MainDbContext>(new MainInitializer());
+        }
+
         [TestMethod]
         public void CreateAndDeleteUsersTest()
         {

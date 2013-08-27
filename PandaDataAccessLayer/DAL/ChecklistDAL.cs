@@ -59,6 +59,16 @@ namespace PandaDataAccessLayer.DAL
             return dal.DbContext.Attribs.Where(x => dal.DbContext.Attrib2ChecklistType.Any(y => y.ChecklistType.Id == checklistTypeId)).ToList();
         }
 
+        public static IEnumerable<AttribValue> GetAttributeValues(this DAL<MainDbContext> dal, Guid checklistId)
+        {
+            return dal.DbContext.AttribValues.Where(x => x.ChecklistId == checklistId).ToList();
+        }
+
+        public static AttribType GetAttribType(this DAL<MainDbContext> dal, Type type)
+        {
+            return dal.DbContext.AttribTypes.Single(x => x.Type == type.FullName);
+        }
+
         public static Checklist UpdateChecklist(this DAL<MainDbContext> dal, Guid checklistId, IEnumerable<AttribValue> attributeValues)
         {
             var user = dal.GetById<Checklist>(checklistId).User;

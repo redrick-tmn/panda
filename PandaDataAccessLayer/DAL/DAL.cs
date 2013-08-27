@@ -11,7 +11,12 @@ namespace PandaDataAccessLayer.DAL
 {
     public class DAL<TDbContext> : IDisposable where TDbContext : DbContext, new()
     {
-        TDbContext mDbContext;
+        static DAL() 
+        {
+            Database.SetInitializer<MainDbContext>(new MainInitializer());
+        }
+
+        private TDbContext mDbContext;
 
         public TDbContext DbContext 
         {
@@ -20,8 +25,12 @@ namespace PandaDataAccessLayer.DAL
 
         public DAL() 
         {
-            Database.SetInitializer<MainDbContext>(new MainInitializer());
             mDbContext = new TDbContext();
+        }
+
+        public DAL(TDbContext dbContext)
+        {
+            mDbContext = dbContext;
         }
 
         #region CRUD by Id

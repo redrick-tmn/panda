@@ -14,6 +14,12 @@ namespace PandaDataAccessLayerTest
     [TestClass]
     public class InitTest
     {
+        [TestInitialize]
+        public void InitTests() 
+        {
+            Database.SetInitializer<MainDbContext>(new MainInitializer());
+        }
+
         [TestMethod]
         public void DefaultAttribTypesExistsTest()
         {
