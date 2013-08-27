@@ -52,6 +52,7 @@
     <Compile Include="DAL\ChecklistDAL.cs" />
     <Compile Include="DAL\DAL.cs" />
     <Compile Include="DAL\DictDAL.cs" />
+    <Compile Include="Entities\Album.cs" />
     <Compile Include="Entities\EntityList.cs" />
     <Compile Include="Entities\IGuidIdentifiable.cs" />
     <Compile Include="DAL\UserDAL.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Entities\DictValue.cs" />
     <Compile Include="Entities\EmployerUser.cs" />
     <Compile Include="Entities\MvcAction.cs" />
+    <Compile Include="Entities\Photo.cs" />
     <Compile Include="Entities\PrivateEmployer.cs" />
     <Compile Include="Entities\PrivateRecruiter.cs" />
     <Compile Include="Entities\PromouterUser.cs" />

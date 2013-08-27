@@ -37,6 +37,9 @@ namespace PandaDataAccessLayer
         public DbSet<SeoEntry> SeoEntries { get; set; }
         public DbSet<Session> Sessions { get; set; }
 
+        public DbSet<Album> Albums { get; set; }
+        public DbSet<Photo> Photos { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserBase>().ToTable("UserBase");

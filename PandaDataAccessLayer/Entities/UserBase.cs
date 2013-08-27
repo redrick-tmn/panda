@@ -17,8 +17,11 @@ namespace PandaDataAccessLayer.Entities
         public string Password { get; set; }
         public string Salt { get; set; }
 
-        public virtual ICollection<Checklist> Checklists { get; set; }
         public virtual SeoEntry SeoEntry { get; set; }
+        public virtual Photo Avatar { get; set; }
+
+        public virtual ICollection<Checklist> Checklists { get; set; }
         public virtual ICollection<Session> Sessions { get; set; }
+        public virtual ICollection<Album> Albums { get; set; }
     }
 }
