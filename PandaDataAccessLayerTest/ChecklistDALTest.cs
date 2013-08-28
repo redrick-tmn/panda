@@ -25,8 +25,9 @@ namespace PandaDataAccessLayerTest
         {
             using (var dal = new DAL<MainDbContext>())
             {
-                var promouter = dal.Create<PromouterUser>(
-                    new PromouterUser
+                var checklistCount = dal.DbContext.Checklists.Count();
+                var promouter = dal.Create<PrivateEmployer>(
+                    new PrivateEmployer
                     {
                         Email = "email@domain.com"
                     },
@@ -36,17 +37,15 @@ namespace PandaDataAccessLayerTest
                         Title = "Mail",
                         Description = "Send mail to some gays =))"
                     });
-                var checklistCount = dal.DbContext.Checklists.Count();
                 var checklist = dal.CreateChecklist(promouter, new List<AttribValue>());
                 dal.DbContext.SaveChanges();
 
-                Assert.AreEqual(checklistCount + 1, dal.DbContext.Checklists.Count());
+                Assert.AreEqual(checklistCount + 2, dal.DbContext.Checklists.Count());
 
                 dal.DeleteById<Checklist>(dal.DbContext.Entry(checklist).Entity.Id);
-                dal.DeleteById<PromouterUser>(dal.DbContext.Entry(promouter).Entity.Id);
                 dal.DbContext.SaveChanges();
 
-                Assert.AreEqual(checklistCount, dal.DbContext.Checklists.Count());
+                Assert.AreEqual(checklistCount+1, dal.DbContext.Checklists.Count());
             }
         } 
     }

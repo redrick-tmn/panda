@@ -10,11 +10,20 @@ namespace PandaDataAccessLayer.DAL
 {
     public static class ChecklistDAL
     {
+        private const string PromouterChecklistTypeCode = "Promouter";
+        private const string CompanyChecklistTypeCode = "Company";
+
         public static Checklist CreateChecklist(this DAL<MainDbContext> dal, UserBase user, IEnumerable<AttribValue> attributeValues) 
         {
             var checkList = dal.Create<Checklist>();
             checkList.AttrbuteValues = new List<AttribValue>(attributeValues);
-            checkList.ChecklistType = dal.DbContext.ChecklistTypes.Single(x => x.Code == "Company");
+            var checklistTypeCode = string.Empty;
+            if (user is PromouterUser)
+                checklistTypeCode = PromouterChecklistTypeCode;
+            else if (user is EmployerUser)
+                checklistTypeCode = CompanyChecklistTypeCode;
+
+            checkList.ChecklistType = dal.DbContext.ChecklistTypes.FirstOrDefault(x => x.Code == checklistTypeCode);
             checkList.User = user;
             return checkList;
         }

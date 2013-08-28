@@ -13,6 +13,12 @@ namespace PandaDataAccessLayer.Entities
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
-        public virtual ICollection<WorkExpirience> WorkExpirience { get; set; } 
+        public virtual ICollection<WorkExpirience> WorkExpirience { get; set; }
+
+        public EntityList() 
+        {
+            if (WorkExpirience == null)
+                WorkExpirience = new List<WorkExpirience>();
+        }
     }
 }

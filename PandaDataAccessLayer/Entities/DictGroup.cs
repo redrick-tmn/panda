@@ -16,5 +16,11 @@ namespace PandaDataAccessLayer.Entities
         public string Description { get; set; }
 
         public virtual ICollection<DictValue> DictValues { get; set; }
+
+        public DictGroup() 
+        {
+            if (DictValues == null)
+                DictValues = new List<DictValue>();
+        }
     }
 }

@@ -53,6 +53,7 @@
     <Compile Include="DAL\DAL.cs" />
     <Compile Include="DAL\DictDAL.cs" />
     <Compile Include="Entities\Album.cs" />
+    <Compile Include="Entities\BlogPost.cs" />
     <Compile Include="Entities\EntityList.cs" />
     <Compile Include="Entities\IGuidIdentifiable.cs" />
     <Compile Include="DAL\UserDAL.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Entities\PrivateEmployer.cs" />
     <Compile Include="Entities\PrivateRecruiter.cs" />
     <Compile Include="Entities\PromouterUser.cs" />
+    <Compile Include="Entities\Review.cs" />
     <Compile Include="Entities\SeoEntry.cs" />
     <Compile Include="Entities\Session.cs" />
     <Compile Include="Entities\UserBase.cs" />

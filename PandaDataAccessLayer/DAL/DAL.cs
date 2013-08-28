@@ -54,7 +54,7 @@ namespace PandaDataAccessLayer.DAL
 
         #region CRUD by Entity
 
-        public TEntity Create<TEntity>() where TEntity : class
+        public TEntity Create<TEntity>() where TEntity : class, IGuidIdentifiable
         {
             var set = mDbContext.Set<TEntity>();
             var instance = set.Create();
@@ -62,25 +62,33 @@ namespace PandaDataAccessLayer.DAL
             return instance;
         }
 
-        public TEntity Create<TEntity>(TEntity entity) where TEntity : class
+        public TEntity Create<TEntity>(TEntity entity) where TEntity : class, IGuidIdentifiable
         {
             var set = mDbContext.Set<TEntity>();
             set.Add(entity);
             return entity;
         }
 
-        public TEntity Create<TEntity>(TEntity entity, Func<TEntity, TEntity> func) where TEntity : class
+        public TEntity Create<TEntity>(TEntity entity, Func<TEntity, TEntity> func) where TEntity : class, IGuidIdentifiable
         {
             return Create(func(entity));
         }
 
-        public TEntity Delete<TEntity>(TEntity entity) where TEntity : class
+        public TEntity Delete<TEntity>(TEntity entity) where TEntity : class, IGuidIdentifiable
         {
             var set = mDbContext.Set<TEntity>();
             set.Remove(entity);
             return entity;
         }
 
+        #endregion
+
+        #region other
+        public IEnumerable<TEntity> TopRandom<TEntity>(int count)
+            where TEntity : class, IGuidIdentifiable
+        {
+            return mDbContext.Set<TEntity>().OrderBy(x => new Guid()).Take(count).ToList();
+        }
         #endregion
 
         public void Dispose()

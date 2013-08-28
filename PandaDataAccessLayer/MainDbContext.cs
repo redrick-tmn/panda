@@ -30,16 +30,19 @@ namespace PandaDataAccessLayer
         //Dict
         public DbSet<DictGroup> DictGroups { get; set; }
         public DbSet<DictValue> DictValues { get; set; }
-
+        //Work expirience
         public DbSet<WorkExpirience> WorkExpirience { get; set; }
         public DbSet<EntityList> EntityLists { get; set; }
-
+        //Seo
         public DbSet<SeoEntry> SeoEntries { get; set; }
         public DbSet<Session> Sessions { get; set; }
-
+        //Photos
         public DbSet<Album> Albums { get; set; }
         public DbSet<Photo> Photos { get; set; }
-
+        //Blog
+        public DbSet<BlogPost> BlogPosts { get; set; }
+        //Reviews
+        public DbSet<Review> Reviews { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserBase>().ToTable("UserBase");
