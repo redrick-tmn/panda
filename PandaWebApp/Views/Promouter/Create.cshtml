@@ -8,11 +8,12 @@
     @Html.ValidationSummary();
     
     <div class="label">Почта</div>
-    <div class="editor">@Html.TextBoxFor(model => model.Email);</div>
+    <div class="editor">@Html.TextBoxFor(model => model.Email)</div>
     
     <div class="label">Пароль</div>
     <div class="editor">@Html.PasswordFor(model => model.Password)</div>
     
     <div class="lebel">Подтверждение пароля</div>
-    <div class="editor">@Html.PasswordFor(model => model.Password);</div>
+    <div class="editor">@Html.PasswordFor(model => model.PasswordConfirmation)</div>
+    <input type="submit" value="Создать" />
 }

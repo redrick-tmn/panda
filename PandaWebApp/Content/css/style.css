@@ -1,4 +1,4 @@
-﻿* { font-family: "Arial Rounded MT"; padding: 0; margin: 0; }
+* { font-family: "Arial"; padding: 0; margin: 0; }
 
 /*little framework*/
 /*floats*/
@@ -33,8 +33,8 @@ ul.list-style { margin-left: 20px; }
 
 .banner-top{ width: 500px; height: 100px; margin: 20px; background-color: lightgray; }
 
-.top-panel { position: absolute; height: 48px; width: 100%; background: url(../img/top.png); }
-.top-shadow { position:absolute; height: 11px; width: 1101px; background: url(../img/shadow.png); }
+.top-panel { position: absolute; height: 48px; width: 100%; background: url(/Content/img/top.png); }
+.top-shadow { position:absolute; height: 11px; width: 1101px; background: url(/Content/img/shadow.png); }
 
 .content { padding-top: 10px; }
 
@@ -46,7 +46,7 @@ ul.list-style { margin-left: 20px; }
 .user .header .user-number { font-size: 14px; color: rgb( 215, 111, 18 ); }
 .user .header .user-status 
 { 
-	background-color: #ebebeb; 
+	background-color: #ebebeb, 
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;

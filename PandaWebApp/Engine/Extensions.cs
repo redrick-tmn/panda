@@ -25,6 +25,25 @@ namespace PandaWebApp.Engine
                 : src;
         }
 
+        public static string GetString(this byte[] bytes)
+        {
+            return Encodings.GetString(bytes);
+        }
+
+        public static byte[] GetBytes(this string str)
+        {
+            return Encodings.GetBytes(str);
+        }
+
+        #endregion
+
+        #region Password
+
+        public static string ToPassword(this string passwd)
+        {
+            return Password.MakePassword(passwd, DateTime.UtcNow);
+        }
+
         #endregion
     }
 }
