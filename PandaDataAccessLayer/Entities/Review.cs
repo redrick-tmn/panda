@@ -19,6 +19,12 @@ namespace PandaDataAccessLayer.Entities
         public DateTime ModifyDate { get; set; }
         public DateTime CreationDate { get; set; }
 
-        public virtual UserBase User { get; set; }
+        public virtual ICollection<UserBase> Users { get; set; }
+
+        public Review() 
+        {
+            if (Users == null)
+                Users = new List<UserBase>();
+        }
     }
 }
