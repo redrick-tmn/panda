@@ -5,6 +5,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
+using PandaWebApp.Engine.Binders;
+using PandaDataAccessLayer.Entities;
+using PandaDataAccessLayer.DAL;
+
 namespace PandaWebApp.Controllers
 {
     public class PromouterController : ModelCareController
@@ -21,8 +26,32 @@ namespace PandaWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                return RedirectToAction("Detail", new { id =  });
+                //salt
+                model.Password = Password.MakePassword(model.Password, DateTime.UtcNow);
+                var binder = new RegisterPromouterToUsers();
+                var entry = new PromouterUser();
+                binder.Load(model, entry);
+                DataAccessLayer.Create(entry);
+                DataAccessLayer.DbContext.SaveChanges();
+
+                return RedirectToAction("Detail", new { id = entry.Id });
             }
+
+            return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Detail(Guid id)
+        {
+            var entry = DataAccessLayer.GetById<PromouterUser>(id);
+            if (entry == null)
+            {
+                return HttpNotFound("Promouter not found");
+            }
+
+            var model = new ViewModels.Promouter();
+            var binder = new ViewPromouterToUsers();
+            binder.InverseLoad(entry, model);
 
             return View(model);
         }

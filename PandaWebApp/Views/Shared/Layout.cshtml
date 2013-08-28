@@ -9,8 +9,8 @@
 	    <meta name="keywords"  content="@ViewBag.Keywords" />
 	    <meta name="description" content="@ViewBag.Description" />
 		
-        <link rel="stylesheet" href="@Url.Content("~/css/frameworks/jquery/south-street/jquery-ui-1.10.3.custom.min.css")" />
-	    <link rel="stylesheet" href="@Url.Content("~/css/style.css")" />
+        <link rel="stylesheet" href="@Url.Content("~/Content/css/frameworks/jquery/south-street/jquery-ui-1.10.3.custom.min.css")" />
+	    <link rel="stylesheet" href="@Url.Content("~/Content/css/style.css")" />
 	</head>
 	
 	<body>
@@ -21,13 +21,13 @@
 			<div class="header">
 				<div class="top-links">
 					<a href="#" class="left middle">Выберите город</a>
-					<a href="#" class="right middle-img"><img src="img/enter-button.png" /></a>
+					<a href="#" class="right middle-img"><img src="/Content/img/enter-button.png" /></a>
 					<a href="#" class="right middle">Зарегистрироваться на сайте</a>
 					
 					<div class="clear"></div>
 				</div>
 				
-				<div class="logo left"><img src="img/logo.png" /></div>
+				<div class="logo left"><img src="/Content/img/logo.png" /></div>
 				<div class="right">
 					<div class="banner-top"></div>
 					<ul class="main-menu horiz">
@@ -87,7 +87,7 @@
 								<span class="name"><a href="#">#USERNAME#</a></span>
 							</li>
 						</ul>
-						<img src="img/pulse-bottom.png" />
+						<img src="/Content/img/pulse-bottom.png" />
 					</div>
 					
 					<div class="banner-side empty"></div>
@@ -96,6 +96,7 @@
 					<div class="banner-side empty"></div>
 					<div class="banner-side empty"></div>
 				</div>
+                @RenderBody()
 				<div class="clear"></div>
 			</div>
 			<div class="footer"></div>

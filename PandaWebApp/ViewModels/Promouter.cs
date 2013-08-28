@@ -15,6 +15,8 @@ namespace PandaWebApp.ViewModels
             public IEnumerable<string> Time;
         }
 
+        public Guid UserId { get; set; }
+
         public string Icon { get; set; }
         public string Name { get; set; }
         public string Status { get; set; }

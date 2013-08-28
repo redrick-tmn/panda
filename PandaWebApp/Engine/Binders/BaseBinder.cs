@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PandaWebApp.Engine.Binders
 {
-    public class BaseBinder<TSource, TDest>
+    public abstract class BaseBinder<TSource, TDest>
     {
         public abstract void Load(TSource source, TDest dest);
 

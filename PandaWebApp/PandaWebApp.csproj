@@ -45,7 +45,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.Extended">
+    <Reference Include="EntityFramework.Extended, Version=5.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.Extended.5.0.0.73\lib\net45\EntityFramework.Extended.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
@@ -118,8 +119,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\PromouterController.cs" />
+    <Compile Include="Engine\Binders\BaseBinder.cs" />
+    <Compile Include="Engine\Binders\RegisterPromouterToUsers.cs" />
+    <Compile Include="Engine\Crypt.cs" />
+    <Compile Include="Engine\Encodings.cs" />
     <Compile Include="Engine\Extensions.cs" />
     <Compile Include="Engine\Helper.cs" />
+    <Compile Include="Engine\ModelCareController.cs" />
+    <Compile Include="Engine\Password.cs" />
     <Compile Include="FormModels\Register.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -154,6 +162,14 @@
     <Content Include="Content\css\frameworks\jquery\south-street\jquery-ui-1.10.3.custom.css" />
     <Content Include="Content\css\frameworks\jquery\south-street\jquery-ui-1.10.3.custom.min.css" />
     <Content Include="Content\css\style.css" />
+    <Content Include="Content\img\car.png" />
+    <Content Include="Content\img\enter-button.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\phone.png" />
+    <Content Include="Content\img\pulse-bottom.png" />
+    <Content Include="Content\img\ready-to-work.png" />
+    <Content Include="Content\img\shadow.png" />
+    <Content Include="Content\img\top.png" />
     <Content Include="Content\js\frameworks\jquery\jquery-1.9.1.js" />
     <Content Include="Content\js\frameworks\jquery\jquery-ui-1.10.3.custom.js" />
     <Content Include="Content\js\frameworks\jquery\jquery-ui-1.10.3.custom.min.js" />
@@ -170,9 +186,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\css\pages\" />
-    <Folder Include="Content\img\" />
     <Folder Include="Content\js\pages\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Engine\Logic\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -193,6 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Promouter\Detail.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Promouter\Create.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
