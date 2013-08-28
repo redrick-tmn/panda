@@ -32,8 +32,9 @@ namespace PandaWebApp.Controllers
                 var entry = new PromouterUser();
                 binder.Load(model, entry);
                 DataAccessLayer.Create(entry);
+                DataAccessLayer.DbContext.SaveChanges();
 
-                return RedirectToAction("Detail", new { id = model.Id });
+                return RedirectToAction("Detail", new { id = entry.Id });
             }
 
             return View(model);
@@ -42,12 +43,17 @@ namespace PandaWebApp.Controllers
         [HttpGet]
         public ActionResult Detail(Guid id)
         {
-            var model = DataAccessLayer.GetById<PromouterUser>(id);
-            if (model == null)
+            var entry = DataAccessLayer.GetById<PromouterUser>(id);
+            if (entry == null)
             {
                 return HttpNotFound("Promouter not found");
             }
-            return View();
+
+            var model = new ViewModels.Promouter();
+            var binder = new ViewPromouterToUsers();
+            binder.InverseLoad(entry, model);
+
+            return View(model);
         }
 
     }
