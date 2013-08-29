@@ -11,8 +11,8 @@ namespace PandaDataAccessLayer
 {
     public class MainInitializer 
 #if DEBUG
-        : DropCreateDatabaseAlways<MainDbContext>
-#else
+        //: DropCreateDatabaseAlways<MainDbContext>
+//#else
         : DropCreateDatabaseIfModelChanges<MainDbContext>
 #endif
     {
