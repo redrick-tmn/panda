@@ -1,4 +1,4 @@
-﻿@{
+@{
     Layout = null;
 }
 
@@ -22,7 +22,7 @@
 				<div class="top-links">
 					<a href="#" class="left middle">Выберите город</a>
 					<a href="#" class="right middle-img"><img src="/Content/img/enter-button.png" /></a>
-					<a href="#" class="right middle">Зарегистрироваться на сайте</a>
+					<a href="@Url.Action("Create", "Promouter")" class="right middle">Зарегистрироваться на сайте</a>
 					
 					<div class="clear"></div>
 				</div>
@@ -105,5 +105,6 @@
         <!-- include scripts there -->
         <script type="text/javascript" src="@Url.Content("~/Content/js/frameworks/jquery/jquery-1.9.1.js")"></script>
         <script type="text/javascript" src="@Url.Content("~/Content/js/frameworks/jquery/jquery-ui-1.10.3.custom.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Content/js/frameworks/custom/inplace-editor.js")"></script>
 	</body>
 </html>

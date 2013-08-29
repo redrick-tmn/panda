@@ -7,7 +7,12 @@ namespace PandaWebApp.Engine
 {
     public static class Extensions
     {
-        #region Boolean 
+        #region Boolean
+
+        public static string ToPandaString(this Boolean b)
+        {
+            return b ? "Да" : "Нет";
+        }
 
         public static int Int(this Boolean b)
         {
@@ -42,6 +47,33 @@ namespace PandaWebApp.Engine
         public static string ToPassword(this string passwd)
         {
             return Password.MakePassword(passwd, DateTime.UtcNow);
+        }
+
+        #endregion
+
+        #region DateTime
+
+        public static string ToPandaString(this DateTime dt)
+        {
+            return dt.ToString("dd.MM.yyyy");
+        }
+
+        #endregion
+
+        #region Double
+
+        public static string ToPandaString(this double d)
+        {
+            return d.ToString("0.00");
+        }
+
+        #endregion
+
+        #region Int
+
+        public static string ToPandaString(this int i)
+        {
+            return i.ToString();
         }
 
         #endregion

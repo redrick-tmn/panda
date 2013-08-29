@@ -9,6 +9,8 @@ using System.Web.Mvc;
 using PandaWebApp.Engine.Binders;
 using PandaDataAccessLayer.Entities;
 using PandaDataAccessLayer.DAL;
+using PandaWebApp.ViewModels;
+using PandaWebApp.Engine.Editors;
 
 namespace PandaWebApp.Controllers
 {
@@ -31,7 +33,7 @@ namespace PandaWebApp.Controllers
                 var binder = new RegisterPromouterToUsers();
                 var entry = new PromouterUser();
                 binder.Load(model, entry);
-                DataAccessLayer.Create(entry);
+                DataAccessLayer.Create<UserBase>(entry, new SeoEntry());
                 DataAccessLayer.DbContext.SaveChanges();
 
                 return RedirectToAction("Detail", new { id = entry.Id });
@@ -54,6 +56,27 @@ namespace PandaWebApp.Controllers
             binder.InverseLoad(entry, model);
 
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Promouter model)
+        {
+            if (ModelState.IsValid)
+            {
+                var allAttributes = DataAccessLayer.GetAllAttributes();
+                var editor = new PromouterEditor(allAttributes);
+                var user = new PromouterUser();
+                editor.Edit(model, user);
+                DataAccessLayer.DbContext.SaveChanges();
+                return Detail(model.UserId);
+            }
+            
+#if DEBUG
+            throw new Exception("ModelState is invalid");
+#endif
+#if RELEASE
+            return new EmptyResult();
+#endif
         }
 
     }

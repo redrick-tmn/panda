@@ -9,12 +9,7 @@ using PandaDataAccessLayer.DAL;
 
 namespace PandaDataAccessLayer
 {
-    public class MainInitializer 
-#if DEBUG
-        : DropCreateDatabaseAlways<MainDbContext>
-#else
-        : DropCreateDatabaseIfModelChanges<MainDbContext>
-#endif
+    public class MainInitializer  : DropCreateDatabaseIfModelChanges<MainDbContext>
     {
         protected override void Seed(MainDbContext context)
         {
