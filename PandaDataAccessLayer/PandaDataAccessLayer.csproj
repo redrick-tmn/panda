@@ -56,6 +56,8 @@
     <Compile Include="DAL\DictDAL.cs" />
     <Compile Include="Entities\Album.cs" />
     <Compile Include="Entities\BlogPost.cs" />
+    <Compile Include="Entities\DesiredWork.cs" />
+    <Compile Include="Entities\DesiredWorkTime.cs" />
     <Compile Include="Entities\EntityList.cs" />
     <Compile Include="Entities\IGuidIdentifiable.cs" />
     <Compile Include="DAL\UserDAL.cs" />
