@@ -20,6 +20,7 @@ namespace PandaWebApp.Controllers
         public ActionResult Create()
         {
             var model = new FormModels.Register.Promouter();
+
             return View();
         }
 
@@ -33,6 +34,7 @@ namespace PandaWebApp.Controllers
                 var binder = new RegisterPromouterToUsers();
                 var entry = new PromouterUser();
                 binder.Load(model, entry);
+             
                 DataAccessLayer.Create<UserBase>(entry, new SeoEntry());
                 DataAccessLayer.DbContext.SaveChanges();
 

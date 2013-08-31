@@ -32,6 +32,9 @@ namespace PandaWebApp.ViewModels
 
             public DateTime CreatedDate { get; set; }
 
+            public DateTime ModifyDate { get; set; }
+
+            public Guid Id { get; set; }
         }
 
         public string Title { get; set; }
