@@ -1,0 +1,31 @@
+﻿@model PandaWebApp.ViewModels.Blog.Entry
+@{
+    ViewBag.Title = @Model.Title;
+}
+<h2>Уютный блог Панды</h2>
+
+    @Html.ValidationSummary()
+
+  
+<h3>
+    <div class="editor">@Model.Title</div>
+</h3>
+
+<h4>
+    <div class="editor"> @Model.FullText</div>
+</h4>
+
+    
+<div class="label">Был создан: @Model.CreatedDate</div>
+   
+<a href="./Posts">Просмотреть все посты</a>
+
+
+
+
+
+
+
+   
+
+

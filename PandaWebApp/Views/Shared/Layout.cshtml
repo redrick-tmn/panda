@@ -3,15 +3,16 @@
 }
 
 <html>
-	<head>
-	    <title>@ViewBag.Title</title>
-	    <meta charset="utf-8" />
-	    <meta name="keywords"  content="@ViewBag.Keywords" />
-	    <meta name="description" content="@ViewBag.Description" />
+    <head>
+        
+        <title>@ViewBag.Title</title>
+        <meta charset="windows-1251" />
+        <meta name="keywords"  content="@ViewBag.Keywords" />
+        <meta name="description" content="@ViewBag.Description" />
 		
         <link rel="stylesheet" href="@Url.Content("~/Content/css/frameworks/jquery/south-street/jquery-ui-1.10.3.custom.min.css")" />
-	    <link rel="stylesheet" href="@Url.Content("~/Content/css/style.css")" />
-	</head>
+        <link rel="stylesheet" href="@Url.Content("~/Content/css/style.css")" />
+    </head>
 	
 	<body>
 	
@@ -20,9 +21,9 @@
 		<div class="body layer one">
 			<div class="header">
 				<div class="top-links">
-					<a href="#" class="left middle">Р’С‹Р±РµСЂРёС‚Рµ РіРѕСЂРѕРґ</a>
+					<a href="#" class="left middle">Выберите город</a>
 					<a href="#" class="right middle-img"><img src="/Content/img/enter-button.png" /></a>
-					<a href="@Url.Action("Create", "Promouter")" class="right middle">Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ РЅР° СЃР°Р№С‚Рµ</a>
+					<a href="@Url.Action("Create", "Promouter")" class="right middle">Зарегистрироваться на сайте</a>
 					
 					<div class="clear"></div>
 				</div>
@@ -31,12 +32,12 @@
 				<div class="right">
 					<div class="banner-top"></div>
 					<ul class="main-menu horiz">
-						<li><a href="#">Рћ РїСЂРѕРµРєС‚Рµ</a></li>
-						<li><a href="#">РЎР»РѕРІР°СЂСЊ</a></li>
-						<li><a href="#">Р‘Р»РѕРі</a></li>
-						<li><a href="#">Р’РѕРїСЂРѕСЃ-РћС‚РІРµС‚</a></li>
-						<li><a href="#">РљРѕРЅС‚Р°РєС‚С‹</a></li>
-						<li><a href="#">РџР»Р°С‚РЅС‹Рµ СѓСЃР»СѓРіРё</a></li>
+						<li><a href="#">О проекте</a></li>
+						<li><a href="#">Словарь</a></li>
+						<li><a href="@Url.Action("Posts", "Blog")">Блог</a></li>
+						<li><a href="#">Вопрос-Ответ</a></li>
+						<li><a href="#">Контакты</a></li>
+						<li><a href="#">Платные услуги</a></li>
 					</ul>
 				</div>
 				<div class="clear"></div>
@@ -46,11 +47,11 @@
 			<div class="content">
 				<div class="right-sidebar right">
 					<div class="pulse">
-						<div class="title">РџР°РЅРґР° РїСѓР»СЊСЃ</div>
+						<div class="title">Панда пульс</div>
 						<ul>
 							<li class="temp"></li>
 							<li class="header">
-								<span class="left">РћРќР›РђР™Рќ</span>
+								<span class="left">ОНЛАЙН</span>
 								<span class="right"><a href="#">#TOTALUSERS#</a></span>
 								<div class="clear"></div>
 							</li>
