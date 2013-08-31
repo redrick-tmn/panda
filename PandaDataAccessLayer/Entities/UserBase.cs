@@ -16,6 +16,8 @@ namespace PandaDataAccessLayer.Entities
         public string Email { get; set; }
         public string Password { get; set; }
         public string Salt { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Number { get; set; }
 
         public virtual SeoEntry SeoEntry { get; set; }
         public virtual Photo Avatar { get; set; }

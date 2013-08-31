@@ -43,6 +43,9 @@ namespace PandaDataAccessLayer
         public DbSet<BlogPost> BlogPosts { get; set; }
         //Reviews
         public DbSet<Review> Reviews { get; set; }
+        public DbSet<DesiredWork> DesiredWork { get; set; }
+        public DbSet<DesiredWorkTime> DesiredWorkTime { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<UserBase>().ToTable("UserBase");

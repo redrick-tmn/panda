@@ -114,6 +114,105 @@ namespace PandaDataAccessLayer
             });
 
             #endregion
+
+            #region desired work
+
+            var workGroup = new DictGroup
+            {
+                Code = "JOB",
+                Description = "Желаеммая работа"
+            };
+            var workValues = new List<DictValue>() 
+                {
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "MERC",
+                        Description = "Мерчендайзер",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "SUPER",
+                        Description = "Супервайзер",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "COURIER",
+                        Description = "Курьер",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "AUDITOR",
+                        Description = "Аудитор/Чекер",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "BUYER",
+                        Description = "Тайный покупатель",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "PROMOUTER",
+                        Description = "Промоутер",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "AUDITOR",
+                        Description = "Аудитор/Чекер",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "ANIMATOR",
+                        Description = "Аниматор",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "PROMO_MODEL",
+                        Description = "Промо-модель",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "MASCOT",
+                        Description = "Ростовая кукла",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "INTERVIEWER",
+                        Description = "Интервьюер",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "MODEL",
+                        Description = "Модель",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "WORKER",
+                        Description = "Разнорабочий",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "BARMEN",
+                        Description = "Бармен",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "WAITER",
+                        Description = "Официант",
+                    }),
+                    dal.Create<DictValue>(new DictValue
+                    {
+                        Code = "HOSTESS",
+                        Description = "Хостес",
+                    }),
+                };
+            workGroup = dal.CreateDictGroup(workGroup, workValues).Key;
+            dal.Create<AttribType>(new AttribType
+            {
+                DictGroup = workGroup,
+                Type = typeof(DictGroup).FullName,
+            });
+            
+            #endregion
         }
 
         private void addDefaultAttribTypes(MainDbContext context) 
@@ -224,6 +323,16 @@ namespace PandaDataAccessLayer
                 },
                 new Attrib
                 {
+                    AttribType = dal.GetAttribType(typeof(EntityList)),
+                    Name = "Интересующая работа",
+                },
+                new Attrib
+                {
+                    AttribType = dal.GetAttribType(typeof(EntityList)),
+                    Name = "Желаемое время работы",
+                },
+                new Attrib
+                {
                     AttribType = dal.GetAttribType(typeof(int)),
                     Name = "Рост"
                 },
@@ -286,6 +395,16 @@ namespace PandaDataAccessLayer
                 {
                     AttribType = dal.GetAttribType(typeof(bool)),
                     Name = "Зимние коньки"
+                },
+                new Attrib
+                {
+                    AttribType = dal.GetAttribType(typeof(string)),
+                    Name = "О себе"
+                },
+                new Attrib
+                {
+                    AttribType = dal.GetAttribType(typeof(string)),
+                    Name = "Интересы"
                 },
             };
             foreach (var attrib in attribs)
