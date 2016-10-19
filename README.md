@@ -1,4 +1,6 @@
-panda
+Panda
 =====
 
-Link to reuirements http://goo.gl/AnuxgT
+Commercial project for a Tyumen recruitment agency.
+
+Link to reqirements http://goo.gl/AnuxgT
